@@ -1,0 +1,38 @@
+version: '3.8'
+
+services:
+  ###################################### server ############################################
+  server:
+    container_name: server
+    image: node:16.11.1
+    command: 'npm run start'
+    user: node
+    volumes:
+      - ./:/home/node/app
+    working_dir: /home/node/app
+    env_file:
+      - ./.env
+    ports:
+      - '4000:4000'
+    depends_on:
+      - database
+    restart: always
+
+  ########################################## Postgres ################################################
+  database:
+    container_name: database
+    command: -p 4100
+    image: postgres:13
+    restart: always
+    environment:
+      POSTGRES_DB: pointing-db
+      POSTGRES_PASSWORD: toor
+      POSTGRES_USER: root
+      PGDATA: /var/lib/postgresql/data/db-files/
+    ports:
+      - '4100:4100'
+    volumes:
+      - database-volume:/var/lib/postgresql/data/db-files
+
+volumes:
+  database-volume: {}
