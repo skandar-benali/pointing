@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/pointing/check-in POST checkin should return the created employee 1`] = `
+Object {
+  "checkIn": "2021-12-16T10:53:12.522Z",
+  "checkOut": null,
+  "comment": "test comment",
+  "createdAt": "2021-12-16T10:53:12.522Z",
+  "id": 1,
+  "updatedAt": null,
+}
+`;

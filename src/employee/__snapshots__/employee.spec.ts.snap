@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`/employee POST create employee should return the created employee 1`] = `
+Object {
+  "createdAt": "2021-12-16T10:32:04.710Z",
+  "department": 1,
+  "firstName": "tester",
+  "id": 1,
+  "name": "tester",
+  "updatedAt": "2021-12-16T10:32:04.710Z",
+}
+`;
